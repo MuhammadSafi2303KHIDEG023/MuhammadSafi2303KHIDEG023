@@ -1,0 +1,19 @@
+artifact_path: logisticRegression
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.2.2
+mlflow_version: 2.3.1
+model_uuid: 9392906ff8f1461c9a4a12d036bcbc66
+run_id: 85b66586048c4f6a8338e4afcfea933e
+utc_time_created: '2023-05-04 05:52:59.055336'
