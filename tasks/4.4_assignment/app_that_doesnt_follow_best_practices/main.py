@@ -14,14 +14,13 @@ app.debug = os.environ.get("DEBUG") == "1"  # Enable debugging if DEBUG environm
 
 # Solution.
 # Logging the logs to container output using streamHandler instead of a log file
-
 root_logger = logging.getLogger()
 root_logger.setLevel(logging.INFO)
 stream_handler = StreamHandler()
 root_logger.addHandler(stream_handler)
 
 
-TODO_FILE_NAME = "/app/todo_data/todo.json"  #You can change the Path anytime when you want to switch from test to production
+TODO_FILE_NAME = "/app/todo_data/todo.json" if os.environ.get("DEBUG") == "1" else "/app/todo_data/todo_prod.json"  #You can change the Path anytime when you want to switch from test to production
 
 if os.path.exists(TODO_FILE_NAME):
     with open(TODO_FILE_NAME) as f:
